@@ -15,6 +15,7 @@ import android.widget.ListAdapter;
 import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends ListActivity implements View.OnClickListener {
 
     Button Btngetdata;
     LayoutInflater inflater;
@@ -51,9 +52,22 @@ public class MainActivity extends ListActivity {
                 new JSONParse().execute();
             }
         });
+        MyProgressBar.setOnClickListener(this);
 
     }
 
+    @Override
+    public void onClick(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.CustomProgressBar:
+                Toast.makeText(getApplicationContext(), "are you want to cancel", Toast.LENGTH_SHORT).show();
+                break;
+
+
+        }
+    }
     private class JSONParse extends AsyncTask<String, Integer, ArrayList<HashMap<String, String>>> {
 
         ArrayList<HashMap<String, String>> newsList = new ArrayList<HashMap<String, String>>();
@@ -99,7 +113,7 @@ public class MainActivity extends ListActivity {
 
 
             super.onPostExecute(result);
-           // pDialog.dismiss();
+            // pDialog.dismiss();
             MyProgressBar.setVisibility(View.GONE);
             Btngetdata.setEnabled(false);
 
