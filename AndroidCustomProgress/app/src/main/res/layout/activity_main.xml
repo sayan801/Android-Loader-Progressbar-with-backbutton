@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".25"
+        android:layout_centerInParent="true"
+        android:background="@android:color/white"
+
+        >
+
+    <Button
+        android:id="@+id/getdata"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".40"
+        android:text="Get Data" />
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.25"
+        android:layout_centerInParent="true"
+        android:background="@android:color/white"
+
+        >
+
+    <ProgressBar
+        android:id="@+id/CustomProgressBar"
+        android:indeterminateDrawable="@drawable/loader4_progress"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".30"
+        android:visibility="gone"
+        android:layout_marginTop="5dp">
+
+    </ProgressBar>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".40"
+        android:layout_above="@+id/getdata"
+        >
+
+    </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".10"
+        android:layout_centerInParent="true"
+        android:background="@android:color/white"
+
+        />
+
+
+
+</LinearLayout>
